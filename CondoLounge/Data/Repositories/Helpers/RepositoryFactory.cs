@@ -1,4 +1,5 @@
 ﻿
+using CondoLounge.Data.Entities;
 using CondoLounge.Data.Interfaces;
 
 namespace CondoLounge.Data.Repositories.Helpers
@@ -12,6 +13,9 @@ namespace CondoLounge.Data.Repositories.Helpers
         {
             return new Dictionary<Type, Func<ApplicationDbContext, object>>
             {
+                {typeof(ICondoLoungeGenericRepository<ApplicationUser>), dbContext => new ApplicationUserRepository(dbContext, new Logger<ApplicationUserRepository>(_loggerFactory)) },
+                {typeof(ICondoLoungeGenericRepository<Building>), dbContext => new BuildingRepository(dbContext, new Logger<BuildingRepository>(_loggerFactory)) },
+                {typeof(ICondoLoungeGenericRepository<Condo>), dbContext => new CondoRepository(dbContext, new Logger<CondoRepository>(_loggerFactory)) }
             };
         }
         public RepositoryFactories(ILoggerFactory loggerFactory)

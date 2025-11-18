@@ -69,10 +69,10 @@ namespace CondoLounge.Data
 
                 _db.Condos.Add(condo);
 
-                _db.SaveChanges();
-
                 await _userManager.CreateAsync(admin, "VerySecureAdmin45%");
                 await _userManager.AddToRoleAsync(admin, "Admin");
+
+                _db.SaveChanges();
                 _logger.LogInformation("Users are done...");
             }
 

@@ -105,8 +105,8 @@ namespace CondoLounge.Areas.Identity.Pages.Account
             /// </summary>
             [Required]
             [StringLength(100, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.")]
-            [Display(Name = "Condo")]
-            public string Condo { get; set; }
+            [Display(Name = "CondoNumber")]
+            public int CondoNumber { get; set; }
 
             /// <summary>
             ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
@@ -115,7 +115,7 @@ namespace CondoLounge.Areas.Identity.Pages.Account
             [Required]
             [StringLength(100, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.")]
             [Display(Name = "Building")]
-            public string Building { get; set; }
+            public int Building { get; set; }
         }
 
 
@@ -132,6 +132,11 @@ namespace CondoLounge.Areas.Identity.Pages.Account
             if (ModelState.IsValid)
             {
                 var user = CreateUser();
+                user.Condos.Add(new Condo()
+                {
+                    CondoNumber = Input.CondoNumber,
+                    BuildingId = Input.Building
+                });
 
                 await _userStore.SetUserNameAsync(user, Input.Email, CancellationToken.None);
                 await _emailStore.SetEmailAsync(user, Input.Email, CancellationToken.None);

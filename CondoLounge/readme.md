@@ -8,6 +8,9 @@ One condo can have multiple users and the Condo-Number is mandatory and uniq id 
 One user may have multiple condos in multiple buildings.
 A condo will have: CondoNumber, location/ address. 
 
+user M-M condos
+buildings I-M condos
+
 To do:
 1. Make the application runnable. (2%)
 2. Add the Identity middleware (2%)

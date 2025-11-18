@@ -22,6 +22,7 @@ namespace CondoLounge.Data
             modelBuilder.Entity<ApplicationUser>()
                 .HasMany(u => u.Condos)
                 .WithMany(c => c.Users);
+                
 
         }
     }

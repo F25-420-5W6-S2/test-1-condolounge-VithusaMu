@@ -4,5 +4,7 @@ namespace CondoLounge.Data.Interfaces
 {
     public interface IBuildingRepository : ICondoLoungeGenericRepository<Building>
     {
+
+
     }
 }

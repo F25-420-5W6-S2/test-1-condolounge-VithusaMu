@@ -8,5 +8,9 @@ namespace CondoLounge.Data.Repositories
         public ApplicationUserRepository(ApplicationDbContext db, ILogger<ApplicationUserRepository> logger) : base(db, logger)
         {
         }
+        public IEnumerable<ApplicationUser> GetUsersByBuilding(int buildingId)
+        {
+            return (IEnumerable<ApplicationUser>)_dbSet.Select(u => u.Condos.Where(c => c.BuildingId == buildingId)).ToList();
+        }
     }
 }

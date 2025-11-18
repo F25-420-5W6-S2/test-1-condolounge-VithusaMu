@@ -53,7 +53,7 @@ namespace CondoLounge.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Building",
+                name: "Buildings",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -61,7 +61,7 @@ namespace CondoLounge.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Building", x => x.Id);
+                    table.PrimaryKey("PK_Buildings", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -171,7 +171,7 @@ namespace CondoLounge.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Condo",
+                name: "Condos",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -182,11 +182,11 @@ namespace CondoLounge.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Condo", x => x.Id);
+                    table.PrimaryKey("PK_Condos", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Condo_Building_BuildingId",
+                        name: "FK_Condos_Buildings_BuildingId",
                         column: x => x.BuildingId,
-                        principalTable: "Building",
+                        principalTable: "Buildings",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -208,9 +208,9 @@ namespace CondoLounge.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_ApplicationUserCondo_Condo_CondosId",
+                        name: "FK_ApplicationUserCondo_Condos_CondosId",
                         column: x => x.CondosId,
-                        principalTable: "Condo",
+                        principalTable: "Condos",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -260,8 +260,8 @@ namespace CondoLounge.Migrations
                 filter: "[NormalizedUserName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Condo_BuildingId",
-                table: "Condo",
+                name: "IX_Condos_BuildingId",
+                table: "Condos",
                 column: "BuildingId");
         }
 
@@ -287,7 +287,7 @@ namespace CondoLounge.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
-                name: "Condo");
+                name: "Condos");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
@@ -296,7 +296,7 @@ namespace CondoLounge.Migrations
                 name: "AspNetUsers");
 
             migrationBuilder.DropTable(
-                name: "Building");
+                name: "Buildings");
         }
     }
 }

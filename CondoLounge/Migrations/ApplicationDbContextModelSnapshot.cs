@@ -115,7 +115,7 @@ namespace CondoLounge.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Building");
+                    b.ToTable("Buildings");
                 });
 
             modelBuilder.Entity("CondoLounge.Data.Entities.Condo", b =>
@@ -140,7 +140,7 @@ namespace CondoLounge.Migrations
 
                     b.HasIndex("BuildingId");
 
-                    b.ToTable("Condo");
+                    b.ToTable("Condos");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole<int>", b =>

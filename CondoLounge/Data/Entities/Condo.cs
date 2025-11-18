@@ -9,7 +9,7 @@ namespace CondoLounge.Data.Entities
 
         public string Location { get; set; }
 
-        public List<ApplicationUser> Users { get; set; }
+        public List<ApplicationUser> Users { get; set; } = new List<ApplicationUser>();
 
         public int BuildingId { get; set; }
 

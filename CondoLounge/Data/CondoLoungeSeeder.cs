@@ -53,7 +53,6 @@ namespace CondoLounge.Data
 
                 _db.Buildings.Add(building);
 
-                _db.SaveChanges();
                 _logger.LogInformation("Building & condo creation are done...");
             }
 

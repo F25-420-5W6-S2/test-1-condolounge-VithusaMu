@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CondoLounge.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20251118175827_initDB")]
+    [Migration("20251118180248_initDB")]
     partial class initDB
     {
         /// <inheritdoc />

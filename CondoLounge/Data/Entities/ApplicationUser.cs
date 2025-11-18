@@ -4,6 +4,6 @@ namespace CondoLounge.Data.Entities
 {
     public class ApplicationUser : IdentityUser<int>
     {
-        public List<Condo> Condos { get; set; }
+        public List<Condo> Condos { get; set; } = new List<Condo>();
     }
 }
